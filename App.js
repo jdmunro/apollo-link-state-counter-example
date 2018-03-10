@@ -14,11 +14,21 @@ const stateLink = withClientState({
   cache,
   resolvers: {
     Mutation: {
-      incrementCounter: (_, {}, { cache }) => {
+      incrementCounter: (_, args, { cache }) => {
+        const { counter } = cache.readQuery({
+          query: gql`
+            {
+              counter {
+                value
+              }
+            }
+          `
+        });
+
         const data = {
           counter: {
             __typename: "Counter",
-            value: 2
+            value: counter.value + 1
           }
         };
 
