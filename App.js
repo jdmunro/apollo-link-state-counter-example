@@ -89,10 +89,6 @@ const Counter = graphql(gql`
   }
 `)(
   class extends Component {
-    onIncrementPressed = () => {
-      this.props.mutate({});
-    };
-
     render() {
       return (
         <View style={styles.container}>
