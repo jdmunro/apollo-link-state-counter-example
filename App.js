@@ -96,7 +96,7 @@ const Counter = graphql(gql`
     render() {
       return (
         <View style={styles.container}>
-          <Text style={styles.counterText}>{`Counter: ${
+          <Text style={styles.counterText}>{`🐑 Counter: ${
             this.props.data.counter.value
           }`}</Text>
           <IncrementButton />
